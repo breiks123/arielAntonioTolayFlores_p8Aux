@@ -7,6 +7,7 @@ export interface IPost extends Document {
     image: String;
     createdA: Date;
     updateAt: Date;
+    //idUser:String;
 }
 const postSchema = new Schema<IPost>({
     title: { type: String, required: true },
@@ -15,6 +16,7 @@ const postSchema = new Schema<IPost>({
     image: { type: String },
     createdAt: { type: Date, default: Date.now },
     updatedAt: Date,
+    /*idUser:{type: String,required:true  }*/
 
 });
 export default model<IPost>("Post", postSchema);

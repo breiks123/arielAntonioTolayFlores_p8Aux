@@ -1,11 +1,12 @@
-import { model, Schema,Document } from "mongoose";
+import { model, Schema, Document } from "mongoose";
 //import bcrypt from "bcrypt";
 export interface IUser extends Document {
     fullname: String;
     username: String;
     password: String;
-    email: String;    
+    email: String;
     dateReg: Date;
+    //idPost: String;
 }
 const userSchema = new Schema<IUser>({
     fullname: {
@@ -15,7 +16,7 @@ const userSchema = new Schema<IUser>({
     username: {
         type: String,
         required: true,
-    },  
+    },
     password: {
         type: String,
         required: true,
@@ -23,10 +24,14 @@ const userSchema = new Schema<IUser>({
     email: {
         type: String,
         required: true,
-    }, 
+    },
+    /*idpost: {
+        type: String,
+        required: true,
+    },*/
     dateReg: {
         type: Date,
         default: Date.now(),
     },
 });
-export default model<IUser>("User",userSchema)
+export default model<IUser>("User", userSchema)

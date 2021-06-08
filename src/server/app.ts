@@ -16,7 +16,7 @@ class Application {
   }
   start() {
     this.app.listen(this.app.get("port"), () => {
-      console.log(`server running on port ${this.app.get("port")}`);
+      console.log(`server running port ${this.app.get("port")}`);
     });
   }
   middlewares() {
@@ -24,9 +24,9 @@ class Application {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: false }));
   }
-  routes(){
+  routes() {
     //this.app.use("/api/user", userRoutes);   
-    this.app.use("/api",allRoutes);  
+    this.app.use("/api", allRoutes);
   }
 }
 
