@@ -8,4 +8,5 @@ router.put("/editUser/:id", userControllers.editUser);
 router.delete("/deleteUser/:id", userControllers.deleteUser);
 router.get("/getprofile/:id", authToken, userControllers.getProfile);
 router.post("/logUser", userControllers.logUser);
+router.post("/sendEmail", userControllers.sendEmail);
 export default router;
